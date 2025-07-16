@@ -49,7 +49,7 @@ export default function Contact() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-2xl font-bold text-primary">+998 90 359 39 00</p>
+                <p className="text-2xl font-bold text-primary">+998 90 034 06 04</p>
                 <p className="text-muted-foreground mt-2">{t("phone_number_hours")}</p>
               </CardContent>
             </Card>
@@ -119,11 +119,11 @@ export default function Contact() {
                     <Input id="firstName" name="firstName" placeholder={t("your_first_name")} required />
                     {state.errors?.firstName && <p className="text-destructive text-xs">{state.errors.firstName}</p>}
                   </div>
-                  <div className="space-y-2">
+                  {/* <div className="space-y-2">
                     <Label htmlFor="lastName">{t("last_name")}</Label>
                     <Input id="lastName" name="lastName" placeholder={t("your_last_name")} required />
                     {state.errors?.lastName && <p className="text-destructive text-xs">{state.errors.lastName}</p>}
-                  </div>
+                  </div> */}
                 </div>
 
                 <div className="space-y-2">
@@ -131,7 +131,7 @@ export default function Contact() {
                   <Input id="phone" name="phone" placeholder="+998 90 123 45 67" required />
                   {state.errors?.phone && <p className="text-destructive text-xs">{state.errors.phone}</p>}
                 </div>
-
+{/* 
                 <div className="space-y-2">
                   <Label htmlFor="email">{t("email")}</Label>
                   <Input id="email" name="email" type="email" placeholder="email@example.com" />
@@ -142,7 +142,7 @@ export default function Contact() {
                   <Label htmlFor="company">{t("company")}</Label>
                   <Input id="company" name="company" placeholder={t("company_name_optional")} />
                   {state.errors?.company && <p className="text-destructive text-xs">{state.errors.company}</p>}
-                </div>
+                </div> */}
 
                 <div className="space-y-2">
                   <Label htmlFor="message">{t("message")}</Label>
@@ -151,7 +151,7 @@ export default function Contact() {
                     name="message"
                     placeholder={t("your_message")}
                     className="min-h-[120px]"
-                    required
+                    
                   />
                   {state.errors?.message && <p className="text-destructive text-xs">{state.errors.message}</p>}
                 </div>

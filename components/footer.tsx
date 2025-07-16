@@ -49,7 +49,7 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-primary" />
-                <span className="text-muted-foreground">+998 90 359 39 00</span>
+                <span className="text-muted-foreground">+998 90 034 06 04</span>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-primary" />

@@ -21,7 +21,7 @@ export default function Products() {
     {
       title: t("product_a4_paper_title"),
       description: t("product_a4_paper_description"),
-      features: [t("a4_feature_1"), t("a4_feature_2"), t("a4_feature_3"), t("a4_feature_4")],
+      features: [t("a4_feature_1"), t("a4_feature_4")],
       icon: "📄",
       keywords: t("product_a4_paper_keywords"),
       slug: "a4-qogoz",
@@ -99,7 +99,7 @@ export default function Products() {
                 <div className="text-xs text-muted-foreground italic">{product.keywords}</div>
 
                 <Link href={`/products/${product.slug}`} passHref>
-                  <Button className="w-full bg-primary hover:bg-primary/90">{t("order_button")}</Button>
+                  {/* <Button className="w-full bg-primary hover:bg-primary/90">{t("order_button")}</Button> */}
                 </Link>
               </CardContent>
             </Card>
@@ -110,12 +110,12 @@ export default function Products() {
           <h3 className="text-2xl font-bold text-foreground mb-4">{t("special_orders_title")}</h3>
           <p className="text-muted-foreground mb-6 max-w-3xl mx-auto">{t("special_orders_description")}</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact" passHref>
-              {" "}
-              <Button size="lg" className="bg-primary hover:bg-primary/90">
-                {t("special_order_button")}
-              </Button>
-            </Link>
+            <a href="https://t.me/komron_m1rzo" target="_blank" rel="noopener noreferrer">
+  <Button size="lg" className="bg-primary hover:bg-primary/90">
+    {t("special_order_button")}
+  </Button>
+</a>
+
             <a href="https://t.me/Marspaper" target="_blank" rel="noopener noreferrer">
               <Button variant="outline" size="lg">
                 {t("view_prices_button")}

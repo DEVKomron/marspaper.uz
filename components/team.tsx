@@ -147,13 +147,13 @@ export default function Team() {
   return (
     <section id="team" className="py-20 px-4 bg-gradient-to-br from-secondary/5 to-primary/5">
       <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-16">
+        {/* <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-4">
             <Users className="h-8 w-8 text-primary" />
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground">{t("our_team_title")}</h2>
           </div>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">{t("our_team_description")}</p>
-        </div>
+        </div> */}
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {teamMembers.map((member) => (

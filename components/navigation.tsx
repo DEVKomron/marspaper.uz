@@ -91,7 +91,7 @@ export default function Navigation() {
             </div>
             <div className="flex items-center gap-2 text-sm">
               <Phone className="h-4 w-4" />
-              <span>+998 90 359 39 00</span>
+              <span>+998 90 034 06 04</span>
             </div>
           </div>
 

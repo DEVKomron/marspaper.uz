@@ -2,12 +2,18 @@
 
 import { MapPin } from "lucide-react"
 import { useLocale } from "@/context/locale-context"
-import Image from "next/image" // Image komponentini import qilish
 
 export default function GoogleMap() {
   const { t } = useLocale()
-  const mapUrl =
-    "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3000.4247156760653!2d69.1821111!3d41.2343056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e0!3m2!1suz!2s!4v1752427331765!5m2!1suz!2s"
+
+  const latitude = 41.23375263564865
+  const longitude = 69.18150185774246
+
+  // Bu iframe Google Maps’ning "search with pin + route" funksiyasini beradi
+  const mapUrl = `https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12001.697776655307!2d${longitude}!3d${latitude}!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDE0JzAxLjUiTiA2OcKwMTAnNTMuNCJF!5e0!3m2!1sen!2s!4v0000000000000`
+
+  // Bu link tugmachaga bosganda yo‘lni boshlaydi
+  const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${latitude},${longitude}`
 
   return (
     <section className="py-12 px-4 bg-gray-100">
@@ -19,26 +25,30 @@ export default function GoogleMap() {
           </div>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">{t("find_us_on_google_map")}</p>
         </div>
-        <div className="relative w-full h-[400px] rounded-lg overflow-hidden shadow-lg border border-border">
+
+        {/* Google Map */}
+        <div className="relative w-full h-[400px] rounded-lg overflow-hidden shadow-lg border border-border mb-6">
           <iframe
             src={mapUrl}
             width="100%"
             height="100%"
-            frameBorder="0"
-            allowFullScreen={true}
             style={{ border: 0 }}
-            aria-label={t("google_map_aria_label")}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
-          {/* Xarita ustiga joylashuv belgisini qo'shish */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-10">
-            <Image
-              src="/images/mars-logo-pin.jpeg" // Yangi rasm yo'li
-              alt="Mars Paper Location Pin"
-              width={60} // Kichikroq qilish uchun o'lchamni sozladim
-              height={60} // Kichikroq qilish uchun o'lchamni sozladim
-              className="w-15 h-15 rounded-full animate-bounce" // Tailwind klasslari
-            />
-          </div>
+        </div>
+
+        {/* Yo‘lni boshlash tugmasi */}
+        <div className="text-center">
+          <a
+            href={directionsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-primary text-white py-3 px-6 rounded-lg font-semibold shadow-md hover:bg-primary/80 transition"
+          >
+            {t("Bizga yo‘lni boshlang") || "get directions"}
+          </a>
         </div>
       </div>
     </section>
